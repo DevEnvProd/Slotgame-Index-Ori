@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-vol-low: #4CAF50;
+  --color-vol-medium: #FFC107;
+  --color-vol-high: #FF9800;
+  --color-vol-extreme: #F44336;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-[#333333] font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
+  }
+}
+
+.volatility-badge {
+  @apply font-display uppercase text-[10px] tracking-wider px-2 py-0.5 rounded-full font-extrabold;
+}
+
+.stat-value {
+  @apply font-mono text-sm font-medium;
+}
