@@ -159,33 +159,6 @@ export default function Games() {
           )}
         </div>
       </section>
-
-      {/* Play at Platinum Banner */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-900 rounded-[2rem] p-12 text-center relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-600 via-transparent to-transparent"></div>
-            </div>
-            <div className="relative z-10">
-              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mb-6 uppercase tracking-tight">
-                Ready to play for real?
-              </h2>
-              <p className="text-gray-400 mb-10 max-w-2xl mx-auto font-medium">
-                Take your volatility knowledge to the reels at Platinum Casino. Enjoy the best selection of high and extreme volatility slots.
-              </p>
-              <a
-                href="https://platinumcasino.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-red-600 text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-red-700 transition-all shadow-xl shadow-red-600/20"
-              >
-                Play at Platinum Casino <ArrowRight size={20} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

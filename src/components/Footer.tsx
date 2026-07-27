@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
               <span className="font-display font-extrabold text-xl tracking-tight text-white uppercase">
@@ -28,6 +28,7 @@ export default function Footer() {
               <li><Link to="/" className="hover:text-red-500 transition-colors">Home</Link></li>
               <li><Link to="/games" className="hover:text-red-500 transition-colors">Games Database</Link></li>
               <li><Link to="/volatility-guide" className="hover:text-red-500 transition-colors">Volatility Guide</Link></li>
+              <li><Link to="/blog" className="hover:text-red-500 transition-colors">Insights (Blog)</Link></li>
               <li><Link to="/about" className="hover:text-red-500 transition-colors">About Us</Link></li>
             </ul>
           </div>
@@ -49,23 +50,6 @@ export default function Footer() {
               </Link></li>
             </ul>
           </div>
-
-          <div>
-            <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-widest">Partner Casino</h4>
-            <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
-              <p className="text-xs text-gray-400 mb-4 uppercase tracking-wider font-bold">Recommended</p>
-              <p className="text-sm font-bold text-white mb-4">Platinum Casino</p>
-              <p className="text-xs text-gray-400 mb-6">Exclusive 100% bonus up to $500 for our visitors.</p>
-              <a 
-                href="https://platinumcasino.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-red-700 transition-colors w-full justify-center"
-              >
-                Claim Bonus <ExternalLink size={14} />
-              </a>
-            </div>
-          </div>
         </div>
 
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -81,7 +65,7 @@ export default function Footer() {
         
         <div className="mt-8 text-center">
           <p className="text-[10px] text-gray-600 max-w-2xl mx-auto uppercase tracking-tighter">
-            Gambling can be addictive. Please play responsibly. 18+ Only. SlotGame Index is an independent database and educational platform. We may receive commission from partner links.
+            Gambling can be addictive. Please play responsibly. 18+ Only. SlotGame Index is an independent database and educational platform.
           </p>
         </div>
       </div>

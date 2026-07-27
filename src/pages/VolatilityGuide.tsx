@@ -163,23 +163,15 @@ export default function VolatilityGuide() {
             </div>
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-4xl sm:text-6xl font-display font-extrabold text-white mb-8 uppercase tracking-tight leading-tight">
-                Ready to apply your strategy?
+                Ready to choose your slot?
               </h2>
               <p className="text-xl text-red-100 mb-12 font-medium leading-relaxed">
-                Put your knowledge to the test at Platinum Casino. Use our volatility insights to pick the perfect game for your bankroll.
+                Use our comprehensive database to match your play style with the right game volatility level. Play smart, understand the math.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <a
-                  href="https://platinumcasino.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white text-red-600 px-10 py-5 rounded-2xl text-xl font-bold hover:bg-gray-100 transition-all shadow-xl"
-                >
-                  Play at Platinum Casino <ExternalLink size={20} className="ml-2 inline" />
-                </a>
+              <div className="flex justify-center">
                 <Link
                   to="/games"
-                  className="bg-red-700 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-red-800 transition-all border border-red-500"
+                  className="bg-white text-red-600 px-10 py-5 rounded-2xl text-xl font-bold hover:bg-gray-100 transition-all shadow-xl"
                 >
                   Browse Games Database
                 </Link>

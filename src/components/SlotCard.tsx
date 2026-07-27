@@ -49,18 +49,10 @@ export default function SlotCard({ slot }: SlotCardProps) {
         <div className="flex flex-col gap-2">
           <Link
             to={`/games/${slot.slug}`}
-            className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-sm font-bold bg-gray-900 text-white hover:bg-gray-800 transition-colors"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-lg text-sm font-bold bg-gray-900 text-white hover:bg-gray-800 transition-colors"
           >
             View Details <ArrowRight size={16} />
           </Link>
-          <a
-            href="https://platinumcasino.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-sm font-bold border border-red-600 text-red-600 hover:bg-red-50 transition-colors"
-          >
-            Play Now <ExternalLink size={14} />
-          </a>
         </div>
       </div>
     </motion.div>

@@ -54,14 +54,12 @@ export default function GameDetail() {
                 {slot.description}
               </p>
               <div className="flex flex-wrap gap-4">
-                <a
-                  href="https://platinumcasino.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/games"
                   className="inline-flex items-center justify-center gap-2 bg-red-600 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-red-700 transition-all shadow-xl shadow-red-600/20"
                 >
-                  Play at Platinum Casino <ExternalLink size={20} />
-                </a>
+                  Explore More Games
+                </Link>
               </div>
             </div>
 
@@ -184,23 +182,21 @@ export default function GameDetail() {
 
             {/* Sidebar */}
             <div className="space-y-8">
-              <div className="bg-red-50 rounded-3xl p-8 border border-red-100">
+              <div className="bg-blue-50 rounded-3xl p-8 border border-blue-100">
                 <div className="flex items-center gap-3 mb-6">
-                  <ShieldCheck className="text-red-600" size={24} />
-                  <h3 className="text-sm font-bold uppercase tracking-widest text-red-900">Expert Recommendation</h3>
+                  <ShieldCheck className="text-blue-600" size={24} />
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-blue-900">Responsible Play</h3>
                 </div>
-                <p className="text-red-800 font-bold text-lg mb-4">Best Place to Play</p>
-                <p className="text-red-700/70 text-sm font-medium mb-8 leading-relaxed">
-                  We recommend playing {slot.name} at Platinum Casino for the best RTP settings and fastest payouts.
+                <p className="text-blue-800 font-bold text-lg mb-4">Bankroll Strategy</p>
+                <p className="text-blue-700/70 text-sm font-medium mb-8 leading-relaxed">
+                  Always allocate a fixed bankroll before you start. Never chase losses, especially on high or extreme volatility slots where dry spells can be extensive.
                 </p>
-                <a
-                  href="https://platinumcasino.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-4 rounded-xl text-sm font-bold bg-red-600 text-white hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20"
+                <Link
+                  to="/volatility-guide"
+                  className="flex items-center justify-center gap-2 w-full py-4 rounded-xl text-sm font-bold bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
                 >
-                  Visit Platinum Casino <ExternalLink size={16} />
-                </a>
+                  Read Strategy Guide
+                </Link>
               </div>
 
               <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100">

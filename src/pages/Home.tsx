@@ -1,14 +1,21 @@
 import { Link } from 'react-router-dom';
 import { slots } from '../data/slots';
 import { volatilityData } from '../data/volatility';
+import { blogPosts } from '../data/blog';
 import SlotCard from '../components/SlotCard';
 import VolatilityBadge from '../components/VolatilityBadge';
-import { Search, ArrowRight, ShieldCheck, Zap, TrendingUp, Info, ExternalLink } from 'lucide-react';
+import { Search, ArrowRight, ShieldCheck, Zap, TrendingUp, Info, ExternalLink, Calendar, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function Home() {
   const featuredSlots = slots.slice(0, 4);
   const latestSlots = slots.slice(4, 10);
+  
+  // Sort and grab 3 latest articles
+  const latestArticles = [...blogPosts]
+    .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+    .slice(0, 3);
+
 
   return (
     <div className="bg-white">
@@ -129,69 +136,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Casino Banner */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-red-600 rounded-[2rem] p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl shadow-red-600/20">
-            <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
-              <ShieldCheck size={400} className="translate-x-1/4 -translate-y-1/4 rotate-12" />
-            </div>
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
-              <div className="max-w-xl text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
-                  <Zap size={14} /> Exclusive Partner Offer
-                </div>
-                <h2 className="text-4xl sm:text-5xl font-display font-extrabold mb-6 leading-tight">
-                  PLAY AT PLATINUM CASINO
-                </h2>
-                <p className="text-xl text-red-100 mb-8 font-medium">
-                  The best platform for high volatility slots. Get a 100% bonus up to $500 on your first deposit.
-                </p>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                  <a
-                    href="https://platinumcasino.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white text-red-600 px-8 py-4 rounded-xl text-lg font-bold hover:bg-gray-100 transition-all shadow-xl"
-                  >
-                    Claim Bonus Now
-                  </a>
-                  <div className="flex items-center gap-4 text-sm font-bold text-red-100">
-                    <div className="flex items-center gap-1"><ShieldCheck size={16} /> Licensed</div>
-                    <div className="flex items-center gap-1"><TrendingUp size={16} /> Fast Payouts</div>
-                  </div>
-                </div>
-              </div>
-              <div className="hidden lg:block">
-                <div className="bg-white/10 backdrop-blur-xl p-8 rounded-3xl border border-white/20 shadow-2xl">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-red-600 font-bold text-xl">P</div>
-                    <div>
-                      <p className="font-bold text-lg">Platinum Casino</p>
-                      <p className="text-xs text-red-200">Official Partner</p>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center gap-12 border-b border-white/10 pb-4">
-                      <span className="text-sm text-red-100">Bonus</span>
-                      <span className="font-bold text-xl">$500</span>
-                    </div>
-                    <div className="flex justify-between items-center gap-12 border-b border-white/10 pb-4">
-                      <span className="text-sm text-red-100">Free Spins</span>
-                      <span className="font-bold text-xl">200</span>
-                    </div>
-                    <div className="flex justify-between items-center gap-12">
-                      <span className="text-sm text-red-100">Rating</span>
-                      <span className="font-bold text-xl text-yellow-400">★★★★★</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Latest Slots */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -217,6 +161,80 @@ export default function Home() {
             >
               Browse Full Database <Database size={20} className="ml-2" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Insights Blog Section */}
+      <section className="py-24 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-gray-900 mb-4 uppercase tracking-tight">
+                Latest Insights & Strategy
+              </h2>
+              <p className="text-gray-500 font-medium">
+                Expert tips, industry analysis, and guides to help you understand slot mechanics.
+              </p>
+            </div>
+            <Link
+              to="/blog"
+              className="text-red-600 font-bold hover:text-red-700 flex items-center gap-2 transition-colors border-b-2 border-red-600/20 hover:border-red-600 pb-1 uppercase text-sm tracking-wider"
+            >
+              View All Articles <ArrowRight size={18} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {latestArticles.map((post) => (
+              <Link
+                key={post.id}
+                to={`/blog/${post.slug}`}
+                className="bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group h-full"
+              >
+                {/* Thumbnail */}
+                <div className="aspect-video bg-gray-100 overflow-hidden relative">
+                  <img
+                    src={post.imageUrl}
+                    alt={post.title}
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-4 left-4 bg-gray-900/85 backdrop-blur-md text-white text-[9px] uppercase tracking-wider font-extrabold px-2.5 py-1 rounded-full border border-white/10">
+                    {post.category}
+                  </span>
+                </div>
+
+                {/* Info body */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex items-center gap-4 text-[10px] text-gray-400 font-bold uppercase tracking-wider mb-3">
+                    <span className="flex items-center gap-1">
+                      <Calendar size={12} /> {new Date(post.publishDate).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                      })}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock size={12} /> {post.readTime}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors line-clamp-2 mb-3 leading-snug">
+                    {post.title}
+                  </h3>
+
+                  <p className="text-gray-500 text-xs font-medium line-clamp-2 leading-relaxed mb-4">
+                    {post.excerpt}
+                  </p>
+
+                  <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between text-xs font-bold text-red-600 uppercase tracking-widest">
+                    <span>Read Article</span>
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

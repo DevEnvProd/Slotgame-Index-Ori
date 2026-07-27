@@ -149,33 +149,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Partner CTA */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-900 rounded-[3rem] p-12 sm:p-20 text-center relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-600 via-transparent to-transparent"></div>
-            </div>
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white mb-8 uppercase tracking-tight leading-tight">
-                Partner with the Index
-              </h2>
-              <p className="text-xl text-gray-400 mb-12 font-medium leading-relaxed">
-                Are you a casino operator or game provider? Join our network of trusted partners and reach thousands of informed slot players.
-              </p>
-              <a
-                href="https://platinumcasino.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-red-600 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-red-700 transition-all shadow-xl shadow-red-600/20"
-              >
-                Become a Partner <ExternalLink size={20} className="ml-2 inline" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

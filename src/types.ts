@@ -26,3 +26,16 @@ export interface VolatilityInfo {
   bankrollRecommendation: string;
   strategy: string;
 }
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string; // HTML format to hold custom links and formatting naturally
+  publishDate: string; // YYYY-MM-DD
+  readTime: string;
+  author: string;
+  imageUrl: string;
+  category: string;
+}

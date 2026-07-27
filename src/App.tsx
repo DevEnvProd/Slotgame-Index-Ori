@@ -5,6 +5,8 @@ import Games from './pages/Games';
 import GameDetail from './pages/GameDetail';
 import VolatilityGuide from './pages/VolatilityGuide';
 import About from './pages/About';
+import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 
 export default function App() {
   return (
@@ -16,8 +18,11 @@ export default function App() {
           <Route path="games/:slug" element={<GameDetail />} />
           <Route path="volatility-guide" element={<VolatilityGuide />} />
           <Route path="about" element={<About />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogDetail />} />
         </Route>
       </Routes>
     </Router>
   );
 }
+
